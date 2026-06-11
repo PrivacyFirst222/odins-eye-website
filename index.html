@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Odin's Eye Apps — Mobile App Development</title>
+  <meta name="description" content="ODIN'S EYE, LLC is an independent iOS app studio. We craft and sell legendary apps for iPhone and iPad on the App Store." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="none" stroke="%23d4af37" stroke-width="6"/><circle cx="50" cy="50" r="14" fill="%23d4af37"/></svg>' />
+</head>
+<body>
+
+  <!-- ===== Navigation ===== -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#top" class="nav-brand">
+        <svg class="nav-eye" viewBox="0 0 100 100" aria-hidden="true">
+          <ellipse cx="50" cy="50" rx="46" ry="28" fill="none" stroke="currentColor" stroke-width="5"/>
+          <circle cx="50" cy="50" r="13" fill="currentColor"/>
+        </svg>
+        <span>ODIN'S EYE</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#apps">Our Apps</a>
+        <a href="#saga">The Saga</a>
+        <a href="#wisdom">Our Creed</a>
+        <a href="#contact" class="nav-cta">Hail the Hall</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero" id="top">
+    <canvas id="runeCanvas" aria-hidden="true"></canvas>
+    <div class="aurora aurora-1"></div>
+    <div class="aurora aurora-2"></div>
+    <div class="aurora aurora-3"></div>
+
+    <div class="hero-content">
+      <div class="hero-emblem" aria-hidden="true">
+        <svg viewBox="0 0 300 300">
+          <!-- rotating rune ring -->
+          <g class="rune-ring">
+            <circle cx="150" cy="150" r="140" fill="none" stroke="rgba(212,175,55,0.25)" stroke-width="1"/>
+            <circle cx="150" cy="150" r="116" fill="none" stroke="rgba(212,175,55,0.25)" stroke-width="1"/>
+            <text class="ring-runes">
+              <textPath href="#runePath" startOffset="0%">ᚠ ᚢ ᚦ ᚨ ᚱ ᚲ ᚷ ᚹ ᚺ ᚾ ᛁ ᛃ ᛇ ᛈ ᛉ ᛊ ᛏ ᛒ ᛖ ᛗ ᛚ ᛜ ᛞ ᛟ</textPath>
+            </text>
+            <path id="runePath" d="M 150,150 m -128,0 a 128,128 0 1,1 256,0 a 128,128 0 1,1 -256,0" fill="none"/>
+          </g>
+          <!-- the eye -->
+          <g class="emblem-eye">
+            <path d="M 50 150 Q 150 80 250 150 Q 150 220 50 150 Z" fill="none" stroke="#d4af37" stroke-width="4"/>
+            <circle cx="150" cy="150" r="38" fill="none" stroke="#d4af37" stroke-width="3"/>
+            <circle class="emblem-pupil" cx="150" cy="150" r="18" fill="#d4af37"/>
+            <!-- lashes / rays -->
+            <g stroke="#d4af37" stroke-width="3" stroke-linecap="round">
+              <line x1="150" y1="62" x2="150" y2="84"/>
+              <line x1="95"  y1="84" x2="106" y2="102"/>
+              <line x1="205" y1="84" x2="194" y2="102"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+
+      <p class="hero-kicker">⚔ AN INDEPENDENT iOS APP STUDIO ⚔</p>
+      <h1 class="hero-title">ODIN'S<span class="gold"> EYE</span><span class="hero-sub-line">APPS</span></h1>
+      <p class="hero-tagline">
+        Odin traded an eye for infinite wisdom.<br/>
+        We pour ours into every app we forge — built for iPhone, sold on the App Store.
+      </p>
+      <div class="hero-actions">
+        <a href="#apps" class="btn btn-gold">Explore Our Apps</a>
+        <a href="#saga" class="btn btn-ghost">Read the Saga</a>
+      </div>
+    </div>
+
+    <a href="#apps" class="scroll-hint" aria-label="Scroll down">
+      <span class="rune-glyph">ᛟ</span>
+      <span class="scroll-arrow"></span>
+    </a>
+  </section>
+
+  <!-- ===== Our Apps ===== -->
+  <section class="section" id="apps">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-rune">ᛗ</span>
+        <h2>Our <span class="gold">Apps</span></h2>
+        <p>Forged in Swift. Sharpened in the App Store. Built for iPhone and iPad.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card app-card reveal">
+          <div class="app-icon" aria-hidden="true">ᚱ</div>
+          <h3>Ravenry</h3>
+          <p class="app-type">Productivity</p>
+          <p>Your two ravens for the modern age — capture every thought and task before it flies away, and let nothing escape your sight.</p>
+          <a href="#" class="store-badge" aria-label="Download Ravenry on the App Store">Download on the App Store</a>
+          <span class="card-rune" aria-hidden="true">ᚠ</span>
+        </article>
+
+        <article class="card app-card reveal">
+          <div class="app-icon" aria-hidden="true">ᛒ</div>
+          <h3>Bifrost</h3>
+          <p class="app-type">Utilities</p>
+          <p>A rainbow bridge between your devices — move files, links, and clipboard contents across your Apple devices in a flash of light.</p>
+          <a href="#" class="store-badge" aria-label="Download Bifrost on the App Store">Download on the App Store</a>
+          <span class="card-rune" aria-hidden="true">ᚢ</span>
+        </article>
+
+        <article class="card app-card reveal">
+          <div class="app-icon" aria-hidden="true">ᛗ</div>
+          <h3>Mímir</h3>
+          <p class="app-type">Education</p>
+          <p>Wisdom from the well, one sip a day. Spaced-repetition flashcards that make what you learn stay learned.</p>
+          <a href="#" class="store-badge" aria-label="Download Mímir on the App Store">Download on the App Store</a>
+          <span class="card-rune" aria-hidden="true">ᚦ</span>
+        </article>
+      </div>
+
+      <p class="apps-note reveal">More legends are being forged in the smithy. <a href="#contact">Join the ravens' watch</a> to hear when they land.</p>
+    </div>
+  </section>
+
+  <!-- ===== Process / The Saga ===== -->
+  <section class="section section-alt" id="saga">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-rune">ᛋ</span>
+        <h2>The <span class="gold">Saga</span> of Every App</h2>
+        <p>Every app we ship is a story. Here is how each one unfolds.</p>
+      </div>
+
+      <ol class="saga">
+        <li class="saga-step reveal">
+          <div class="saga-marker">ᛁ</div>
+          <div class="saga-body">
+            <h3>The Vision</h3>
+            <p>Every app begins at Hlidskjalf, the high seat that sees all the realms. We watch, we listen, and we find a problem truly worth solving.</p>
+          </div>
+        </li>
+        <li class="saga-step reveal">
+          <div class="saga-marker">ᛁᛁ</div>
+          <div class="saga-body">
+            <h3>The Forging</h3>
+            <p>Designed with care and built in pure Swift — native to its bones, fast as Sleipnir, and faithful to everything that makes iOS feel like iOS.</p>
+          </div>
+        </li>
+        <li class="saga-step reveal">
+          <div class="saga-marker">ᛁᛁᛁ</div>
+          <div class="saga-body">
+            <h3>The Trials</h3>
+            <p>Rigorous testing across iPhones, iPads, and edge cases. Nothing ships until it has survived the gauntlet.</p>
+          </div>
+        </li>
+        <li class="saga-step reveal">
+          <div class="saga-marker">ᛁᚢ</div>
+          <div class="saga-body">
+            <h3>The Launch</h3>
+            <p>The app sails into the App Store like a longship at dawn — and the saga continues with every update we ship.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== Why Us ===== -->
+  <section class="section" id="wisdom">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-rune">ᛒ</span>
+        <h2>Wisdom Has Its <span class="gold">Price</span> — We Paid It</h2>
+        <p>Our creed: a small studio, our own apps, no shortcuts.</p>
+      </div>
+
+      <div class="stats reveal">
+        <div class="stat">
+          <span class="stat-number" data-count="3">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Apps Forged</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-count="9">0</span><span class="stat-suffix">/9</span>
+          <span class="stat-label">Realms Covered</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-count="100">0</span><span class="stat-suffix">%</span>
+          <span class="stat-label">Swift-Forged</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-count="2">0</span><span class="stat-suffix"> ravens</span>
+          <span class="stat-label">On Reconnaissance</span>
+        </div>
+      </div>
+
+      <div class="virtues">
+        <div class="virtue reveal">
+          <h3><span class="rune-glyph gold">ᚺ</span> Huginn — Thought</h3>
+          <p>Every line of code is deliberate. We design and architect before we build, so every app earns its place on your home screen.</p>
+        </div>
+        <div class="virtue reveal">
+          <h3><span class="rune-glyph gold">ᛗ</span> Muninn — Memory</h3>
+          <p>We never abandon what we ship. Every app is maintained, refined, and updated for the long voyage — no forgotten ruins.</p>
+        </div>
+        <div class="virtue reveal">
+          <h3><span class="rune-glyph gold">ᚷ</span> Gungnir — Precision</h3>
+          <p>Like Odin's spear, every detail strikes true — pixel-perfect design and buttery performance on every iPhone and iPad.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section class="section section-contact" id="contact">
+    <div class="aurora aurora-contact"></div>
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-rune">ᛏ</span>
+        <h2>Hail the <span class="gold">Hall</span></h2>
+        <p>Questions, feedback, or a feature worthy of the sagas? The ravens are listening.</p>
+      </div>
+
+      <form class="contact-form reveal" id="contactForm">
+        <div class="form-row">
+          <label>
+            <span>Your Name</span>
+            <input type="text" name="name" placeholder="Leif Eriksson" required />
+          </label>
+          <label>
+            <span>Your Email</span>
+            <input type="email" name="email" placeholder="leif@vinland.com" required />
+          </label>
+        </div>
+        <label>
+          <span>Your Message</span>
+          <textarea name="message" rows="5" placeholder="Feedback on our apps, support questions, or word of new realms to conquer..." required></textarea>
+        </label>
+        <button type="submit" class="btn btn-gold btn-full">Send the Ravens <span aria-hidden="true">🐦‍⬛</span></button>
+        <p class="form-note" id="formNote" hidden>⚡ Message received. The ravens fly to us — we'll answer within one sunrise.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <svg class="nav-eye" viewBox="0 0 100 100" aria-hidden="true">
+          <ellipse cx="50" cy="50" rx="46" ry="28" fill="none" stroke="currentColor" stroke-width="5"/>
+          <circle cx="50" cy="50" r="13" fill="currentColor"/>
+        </svg>
+        <div>
+          <strong>ODIN'S EYE, LLC</strong>
+          <p>An independent iOS app studio. Legendary apps, forged with wisdom.</p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="#apps">Our Apps</a>
+        <a href="#saga">The Saga</a>
+        <a href="#wisdom">Our Creed</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <p class="footer-legal">© <span id="year"></span> ODIN'S EYE, LLC. All rights reserved across the Nine Realms.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
