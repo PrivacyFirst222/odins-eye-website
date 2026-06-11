@@ -119,6 +119,7 @@
 // ----- Contact form (Formspree) -----
 (function contactForm() {
   const form = document.getElementById("contactForm");
+  if (!form) return; // not every page has the form
   const note = document.getElementById("formNote");
   const button = form.querySelector('button[type="submit"]');
 
@@ -153,4 +154,6 @@
 })();
 
 // ----- Footer year -----
-document.getElementById("year").textContent = new Date().getFullYear();
+document.querySelectorAll("#year, .year-copy").forEach((el) => {
+  el.textContent = new Date().getFullYear();
+});
