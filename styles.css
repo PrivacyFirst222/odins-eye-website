@@ -509,6 +509,9 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.
   color: var(--ice);
   font-size: 0.95rem;
 }
+.form-note-error { color: #e0907f; }
+
+.btn:disabled { opacity: 0.6; cursor: wait; transform: none; }
 
 /* ===== Footer ===== */
 .footer {

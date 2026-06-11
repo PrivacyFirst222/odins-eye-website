@@ -116,15 +116,39 @@
   stats.forEach((el) => observer.observe(el));
 })();
 
-// ----- Contact form (front-end only) -----
+// ----- Contact form (Formspree) -----
 (function contactForm() {
   const form = document.getElementById("contactForm");
   const note = document.getElementById("formNote");
-  form.addEventListener("submit", (e) => {
+  const button = form.querySelector('button[type="submit"]');
+
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
-    // No backend yet — wire this to your email service or API endpoint.
+    note.hidden = true;
+    button.disabled = true;
+    const originalLabel = button.innerHTML;
+    button.textContent = "The ravens take flight…";
+
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+      if (!res.ok) throw new Error("Formspree responded " + res.status);
+      note.textContent =
+        "⚡ Message received. The ravens fly to us — we'll answer within one sunrise.";
+      note.classList.remove("form-note-error");
+      form.reset();
+    } catch (err) {
+      note.textContent =
+        "⚠ The ravens were grounded — your message was not sent. Please try again in a moment.";
+      note.classList.add("form-note-error");
+    }
+
     note.hidden = false;
-    form.reset();
+    button.disabled = false;
+    button.innerHTML = originalLabel;
   });
 })();
 
