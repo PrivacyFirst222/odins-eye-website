@@ -353,6 +353,18 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.
   box-shadow: 0 0 16px rgba(212, 175, 55, 0.2);
 }
 
+.store-badge-soon {
+  border-style: dashed;
+  border-color: rgba(212, 175, 55, 0.45);
+  color: var(--gold);
+  cursor: default;
+}
+.store-badge-soon:hover {
+  border-color: rgba(212, 175, 55, 0.45);
+  color: var(--gold);
+  box-shadow: none;
+}
+
 .apps-note {
   text-align: center;
   margin-top: 48px;
