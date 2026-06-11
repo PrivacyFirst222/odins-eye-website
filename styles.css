@@ -288,19 +288,32 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.
 .card p { color: var(--text-dim); font-size: 0.97rem; }
 
 /* app showcase cards */
-.app-icon {
-  width: 68px;
-  height: 68px;
-  border-radius: 16px;
+#apps .cards { grid-template-columns: 1fr; gap: 40px; }
+
+.app-card {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 48px;
+  align-items: center;
+}
+.app-card:nth-child(even) { grid-template-columns: 300px 1fr; }
+.app-card:nth-child(even) .app-phone { order: -1; }
+
+.app-head {
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  color: var(--gold-bright);
-  background: linear-gradient(150deg, #1d2940, #0e1420);
-  border: 1px solid rgba(212, 175, 55, 0.4);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 8px 20px rgba(0, 0, 0, 0.4);
+  gap: 16px;
   margin-bottom: 20px;
+}
+.app-head h3 { margin: 0; }
+
+.app-icon-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 15px;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+  flex-shrink: 0;
 }
 
 .app-type {
@@ -308,8 +321,43 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--ice);
-  margin: -6px 0 12px;
+  margin: 4px 0 0;
   font-weight: 500;
+}
+
+/* CSS iPhone frame around screenshots */
+.app-phone { display: flex; justify-content: center; }
+
+.phone-frame {
+  position: relative;
+  width: 100%;
+  max-width: 270px;
+  padding: 10px;
+  border-radius: 44px;
+  background: linear-gradient(160deg, #161d2a, #05070b);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.55),
+    0 0 50px rgba(127, 209, 224, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+.phone-frame::before {
+  /* dynamic island */
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 22px;
+  border-radius: 12px;
+  background: #05070b;
+  z-index: 1;
+}
+.phone-frame img {
+  display: block;
+  width: 100%;
+  border-radius: 34px;
 }
 
 .app-features {
@@ -570,6 +618,9 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.
   .nav-toggle { display: flex; }
 
   .hero-emblem { width: 170px; }
+  .app-card,
+  .app-card:nth-child(even) { grid-template-columns: 1fr; gap: 32px; }
+  .app-card:nth-child(even) .app-phone { order: 0; }
   .form-row { grid-template-columns: 1fr; gap: 0; }
   .section { padding: 80px 0; }
   .saga::before { left: 23px; }
