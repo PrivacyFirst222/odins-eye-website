@@ -292,11 +292,11 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.
 
 .app-card {
   display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 48px;
+  grid-template-columns: 1fr 230px;
+  gap: 44px;
   align-items: center;
 }
-.app-card:nth-child(even) { grid-template-columns: 300px 1fr; }
+.app-card:nth-child(even) { grid-template-columns: 230px 1fr; }
 .app-card:nth-child(even) .app-phone { order: -1; }
 
 .app-head {
@@ -325,39 +325,58 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.
   font-weight: 500;
 }
 
-/* CSS iPhone frame around screenshots */
-.app-phone { display: flex; justify-content: center; }
+/* angled iPhone mockup around screenshots */
+.app-phone {
+  display: flex;
+  justify-content: center;
+  perspective: 1100px;
+}
 
 .phone-frame {
   position: relative;
   width: 100%;
-  max-width: 270px;
-  padding: 10px;
-  border-radius: 44px;
-  background: linear-gradient(160deg, #161d2a, #05070b);
-  border: 1px solid rgba(212, 175, 55, 0.35);
+  max-width: 185px;
+  padding: 7px;
+  border-radius: 34px;
+  background: linear-gradient(160deg, #1b2434, #05070b);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  transform: rotateY(-22deg) rotateX(5deg) rotateZ(3deg);
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
   box-shadow:
-    0 30px 60px rgba(0, 0, 0, 0.55),
-    0 0 50px rgba(127, 209, 224, 0.07),
+    -28px 36px 50px rgba(0, 0, 0, 0.55),
+    0 0 44px rgba(127, 209, 224, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
+/* mirror the tilt when the phone sits on the left */
+.app-card:nth-child(even) .phone-frame {
+  transform: rotateY(22deg) rotateX(5deg) rotateZ(-3deg);
+  box-shadow:
+    28px 36px 50px rgba(0, 0, 0, 0.55),
+    0 0 44px rgba(127, 209, 224, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+/* straighten gently on hover, as if turned toward the viewer */
+.app-card:hover .phone-frame { transform: rotateY(-8deg) rotateX(2deg) rotateZ(1deg); }
+.app-card:nth-child(even):hover .phone-frame { transform: rotateY(8deg) rotateX(2deg) rotateZ(-1deg); }
+
 .phone-frame::before {
   /* dynamic island */
   content: "";
   position: absolute;
-  top: 20px;
+  top: 14px;
   left: 50%;
   transform: translateX(-50%);
-  width: 80px;
-  height: 22px;
-  border-radius: 12px;
+  width: 56px;
+  height: 16px;
+  border-radius: 9px;
   background: #05070b;
   z-index: 1;
 }
 .phone-frame img {
   display: block;
   width: 100%;
-  border-radius: 34px;
+  border-radius: 27px;
 }
 
 .app-features {
