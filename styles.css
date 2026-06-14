@@ -316,6 +316,22 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.
   flex-shrink: 0;
 }
 
+/* rune icon box (placeholder until a real app icon exists) */
+.app-icon-glyph {
+  width: 64px;
+  height: 64px;
+  border-radius: 15px;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 8px 20px rgba(0, 0, 0, 0.45);
+  background: linear-gradient(150deg, #1d2940, #0e1420);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--gold-bright);
+  flex-shrink: 0;
+}
+
 .app-type {
   font-size: 0.75rem;
   letter-spacing: 0.22em;
@@ -377,6 +393,39 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.
   display: block;
   width: 100%;
   border-radius: 27px;
+}
+
+/* "coming soon" placeholder screen (no screenshot yet) */
+.phone-soon-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  aspect-ratio: 1320 / 2868;
+  border-radius: 27px;
+  background:
+    radial-gradient(ellipse 90% 50% at 50% 30%, rgba(30, 58, 95, 0.6), transparent),
+    linear-gradient(170deg, #131b27, #070b11);
+  text-align: center;
+  padding: 0 18px;
+}
+.phone-soon-rune {
+  font-size: 3.4rem;
+  color: var(--gold);
+  text-shadow: 0 0 26px rgba(212, 175, 55, 0.4);
+}
+.phone-soon-name {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  color: var(--text);
+}
+.phone-soon-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ice);
 }
 
 .app-features {
